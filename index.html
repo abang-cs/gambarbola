@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sesi Habis</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #d1f0ff;
+      background: url('https://short-link.me/latarbelakangg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 30, 45, 0.12);
+      backdrop-filter: blur(6px);
+      z-index: 0;
+    }
+
+    .box {
+      position: relative;
+      z-index: 1;
+      background: rgba(10, 40, 70, 0.12);
+      border-radius: 16px;
+      padding: 38px 48px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+      text-align: center;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 255, 255, 0.14);
+    }
+
+    /* Bola sepak dengan animasi berputar */
+    .ball {
+      width: 80px;  /* Ukuran bola yang pas dengan gambar */
+      height: 80px; /* Ukuran bola yang pas dengan gambar */
+      background: url('https://github.com/abang-cs/gambarbola/raw/main/assets/images/bola.png') no-repeat center center;
+      background-size: contain; /* Memastikan bola menyesuaikan ukuran gambar */
+      border-radius: 50%;
+      position: relative;
+      animation: rotateBall 3s linear infinite, bounce 0.5s alternate infinite;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Animasi bola berputar (rotate) */
+    @keyframes rotateBall {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Efek bounce agar bola terlihat hidup */
+    @keyframes bounce {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #00cfff;
+      text-shadow: 0 0 6px #00cfff, 0 0 18px #0099cc;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 34px;
+      color: #9be3ffcc;
+      text-shadow: 0 0 6px #00b5ff55;
+    }
+
+    .login-button {
+      background: linear-gradient(90deg, #00eaff, #0084ff);
+      border: none;
+      border-radius: 28px;
+      padding: 14px 42px;
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 16px #00d8ffaa, 0 0 40px #008fffcc;
+      transition: all 0.3s ease;
+      letter-spacing: 1.15px;
+      user-select: none;
+    }
+
+    .login-button:hover {
+      box-shadow: 0 0 26px #00eaff, 0 0 60px #00a0ff;
+      transform: scale(1.07);
+    }
+
+    /* Responsive */
+    @media (max-width: 420px) {
+      .box {
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .login-button {
+        font-size: 15px;
+        padding: 12px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="box">
+    <div class="ball"></div> <!-- Bola sepak berputar -->
+    <h2>Session timed out</h2>
+    <p>Please re-login to continue to the admin page..</p>
+    <button class="login-button" onclick="window.location.href='https://abang-cs.github.io/panduan/'">Login</button>
+  </div>
+</body>
+</html>
